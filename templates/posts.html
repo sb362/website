@@ -1,0 +1,14 @@
+{% extends "common.html" %}
+
+{% block content %}
+
+  <div class="post-list">
+    {% for post in posts %}
+      <tr>
+        <td><a href="{{ post.path }}">{{ post.title }}</a></td>
+        <td>{{ post.date }}</td>
+      </tr>
+    {% endfor %}
+  </div>
+
+{% endblock %}
