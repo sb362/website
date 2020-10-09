@@ -1,14 +1,21 @@
 {% extends "common.html" %}
 
-{% block content %}
+{% block head %}
+  <title>{{ post.title }}</title>
+{% endblock %}
 
-  <div class="post-info">
-    <h1>{{ post.title }}</h1>
-    <h6>Published {{ post.date.strftime("%A, %d %B, %Y") }}</h6>
-  </div>
+{% block main %}
+  <article class="post">
+    <header>
+      <h1>{{ post.title }}</h1>
+    </header>
+    
+    <section class="post-content">
+      {{ post.html | safe }}
+    </section>
 
-  <div class="post-content">
-    {{ post.html|safe }}
-  </div>
-
+    <footer>
+      It's over!
+    </footer>
+  </article>
 {% endblock %}

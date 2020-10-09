@@ -1,14 +1,25 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Test</title>
-    <link rel=”stylesheet” href=”static/common.css”>
+    <!--- TODO: remove dependence on googleapis, embed font manually -->
+    <link href="https://fonts.googleapis.com/css2?family=Noticia+Text:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/styles/common.css">
+
+    {% block head %}
+    {% endblock %}
   </head>
 
-  <body>    
-    <div class=”content”>
-      {% block content %}
+  <body>
+    <header>
+      Hello
+    </header>
+
+    <main>
+      {% block main %}
       {% endblock %}
-    </div>
+    </main>
+
+    <footer>
+    </footer>
   </body>
 </html>
