@@ -1,16 +1,28 @@
 {% extends "common.html" %}
 
 {% block head %}
-  <title>List of posts</title>
+  <title>Posts</title>
 {% endblock %}
 
 {% block main %}
-  <div id="post-list">
+  <h2>Posts</h2>
+
+  <table class="post-list">
+      {% if posts %}
+      <h3>This year</h3>
+      {% else %}
+      <h4>Nothing here, yet.</h4>
+      {% endif %}
+
+      <ul>
     {% for post in posts %}
-      <tr>
-        <td><a href="{{ post.path }}">{{ post.title }}</a></td>
-        <td>{{ post.date }}</td>
-      </tr>
+      {% if loop.previtem and loop.previtem.date.strftime("%Y") != post.date.strftime("%Y") %}
+      </ul>
+      <h3>{{ post.date.strftime("%Y") }}</h3>
+      <ul>
+      {% endif %}
+      <li><a style="text-decoration: none;" href="{{ post.path }}">{{ post.title }}</a></li>
     {% endfor %}
-  </div>
+      </ul>
+  </table>
 {% endblock %}

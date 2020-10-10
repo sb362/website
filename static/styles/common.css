@@ -4,8 +4,12 @@ header {
 	max-width: 800px;
 	width: 80%;
 
-	font-family: 'Merriweather Sans', serif;
+	font-family: 'Merriweather Sans', sans-serif;
 	font-size: medium;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Merriweather Sans', sans-serif;
 }
 
 main {
@@ -23,14 +27,7 @@ main img {
 	max-height: 100%;
 }
 
-section {
-	background-color: cyan;
-}
-
-body {	
-	background-color: greenyellow;
-}
-
-article {
-	background-color: red;
+.post-list {
+	border-collapse: collapse;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }

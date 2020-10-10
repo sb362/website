@@ -16,17 +16,20 @@ flat_pages = FlatPages(app)
 freezer = Freezer(app)
 
 @app.route("/")
-def index():
+def route_index():
     return render_template("index.html")
 
 @app.route("/posts")
-def posts():
-    return render_template("posts.html", posts=flat_pages)
+def route_posts():
+    all_posts = (page for page in flat_pages if set(("date", "title")) <= page.meta.keys())
+    sorted_posts = sorted(all_posts, key = lambda post: post.meta["date"], reverse=True)
+    
+    return render_template("posts.html", posts=sorted_posts)
 
 @app.route("/posts/<post_name>")
-def post(post_name):
-    post_page = flat_pages.get_or_404(f"posts/{post_name}")
-    return render_template("post.html", post=post_page)
+def route_post(post_name):
+    post = flat_pages.get_or_404(f"posts/{post_name}")
+    return render_template("post.html", post=post)
 
 if __name__ == "__main__":
     if len(sys.argv) >= 2 and sys.argv[1] == "build":
