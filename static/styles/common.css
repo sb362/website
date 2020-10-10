@@ -1,10 +1,20 @@
+header {
+	display: block;
+	margin: 0 auto;
+	max-width: 800px;
+	width: 80%;
+
+	font-family: 'Merriweather Sans', serif;
+	font-size: medium;
+}
+
 main {
 	display: block;
 	margin: 0 auto;
 	max-width: 800px;
 	width: 80%;
 
-	font-family: 'Noticia Text', serif;
+	font-family: 'Merriweather', serif;
 	font-size: medium;
 }
 
