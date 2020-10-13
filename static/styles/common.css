@@ -1,25 +1,22 @@
-header {
+main, header, nav {
 	display: block;
 	margin: 0 auto;
 	max-width: 800px;
 	width: 80%;
+}
 
+main {
+	font-family: 'Merriweather', serif;
+	font-size: medium;
+}
+
+header, nav {
 	font-family: 'Merriweather Sans', sans-serif;
 	font-size: medium;
 }
 
 h1, h2, h3, h4, h5, h6 {
 	font-family: 'Merriweather Sans', sans-serif;
-}
-
-main {
-	display: block;
-	margin: 0 auto;
-	max-width: 800px;
-	width: 80%;
-
-	font-family: 'Merriweather', serif;
-	font-size: medium;
 }
 
 main img {
@@ -30,4 +27,26 @@ main img {
 .post-list {
 	border-collapse: collapse;
 	box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+a.hidden-link {
+	text-decoration: none;
+	color: inherit;
+}
+
+nav ul {
+	list-style-type: none;
+
+	padding: 0px;
+}
+
+nav li {
+	display: inline;
+}
+
+nav a {
+	text-decoration: none;
+	color: inherit;
+
+	padding: 8px;
 }

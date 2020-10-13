@@ -6,16 +6,10 @@
 
 {% block main %}
   <article class="post">
-    <header>
-      <h1>{{ post.title }}</h1>
-    </header>
+    <h3>{{ post.title }}</h3>
     
-    <section class="post-content">
-      {{ post.html | safe }}
-    </section>
+    <section class="post-content">{{ post.html | safe }}</section>
 
-    <footer>
-      It's over!
-    </footer>
+    <footer></footer>
   </article>
 {% endblock %}

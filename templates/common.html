@@ -6,14 +6,23 @@
     <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/static/styles/common.css">
 
+    <title>{% block title %}{% endblock %}</title>
+
     {% block head %}
     {% endblock %}
   </head>
 
   <body>
     <header>
-      <h1><a href="/" style="text-decoration: none;">Stuart Ballantyne</a></h1>
+      <h1>Stuart Ballantyne</h1>
     </header>
+
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/posts">Posts</a></li>
+      </ul>
+    </nav>
 
     <main>
       {% block main %}

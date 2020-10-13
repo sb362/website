@@ -5,24 +5,24 @@
 {% endblock %}
 
 {% block main %}
-  <h2>Posts</h2>
-
   <table class="post-list">
-      {% if posts %}
-      <h3>This year</h3>
-      {% else %}
+      {% if not posts %}
       <h4>Nothing here, yet.</h4>
       {% endif %}
 
-      <ul>
     {% for post in posts %}
-      {% if loop.previtem and loop.previtem.date.strftime("%Y") != post.date.strftime("%Y") %}
-      </ul>
+      {% if not loop.previtem or loop.previtem.date.strftime("%Y") != post.date.strftime("%Y") %}
+        {% if loop.previtem %} </ul> {% endif %}
+
       <h3>{{ post.date.strftime("%Y") }}</h3>
       <ul>
       {% endif %}
-      <li><a style="text-decoration: none;" href="{{ post.path }}">{{ post.title }}</a></li>
+
+      <li><a class="hidden-link" href="{{ post.path }}">{{ post.title }}</a></li>
     {% endfor %}
+
+      {% if posts %}
       </ul>
+      {% endif %}
   </table>
 {% endblock %}
