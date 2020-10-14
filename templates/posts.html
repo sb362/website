@@ -10,16 +10,16 @@
       <h4>Nothing here, yet.</h4>
       {% endif %}
 
-    {% for post in posts %}
-      {% if not loop.previtem or loop.previtem.date.strftime("%Y") != post.date.strftime("%Y") %}
-        {% if loop.previtem %} </ul> {% endif %}
+      {% for post in posts %}
+        {% if not loop.previtem or loop.previtem.date.strftime("%Y") != post.date.strftime("%Y") %}
+          {% if loop.previtem %} </ul> {% endif %}
 
-      <h3>{{ post.date.strftime("%Y") }}</h3>
+      <h1>{{ post.date.strftime("%Y") }}</h1>
       <ul>
-      {% endif %}
+        {% endif %}
 
       <li><a class="hidden-link" href="{{ post.path }}">{{ post.title }}</a></li>
-    {% endfor %}
+      {% endfor %}
 
       {% if posts %}
       </ul>

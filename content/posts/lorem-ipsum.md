@@ -1,4 +1,5 @@
 title: Lorem Ipsum
+subtitle: This is an example post written in Latin
 date: 2020-10-10
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Velit scelerisque in dictum non. Nunc consequat interdum varius sit amet. Condimentum lacinia quis vel eros donec ac. Venenatis a condimentum vitae sapien pellentesque habitant morbi tristique senectus. Aliquam sem fringilla ut morbi tincidunt augue interdum velit. Libero justo laoreet sit amet cursus sit amet dictum. Sagittis aliquam malesuada bibendum arcu. Eget dolor morbi non arcu risus quis varius. Magna ac placerat vestibulum lectus mauris ultrices. Cursus vitae congue mauris rhoncus aenean vel elit scelerisque. Viverra aliquet eget sit amet tellus. Condimentum lacinia quis vel eros donec ac odio.

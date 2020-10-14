@@ -1,4 +1,4 @@
-main, header, nav {
+main, header, footer, nav {
 	display: block;
 	margin: 0 auto;
 	max-width: 800px;
@@ -10,7 +10,7 @@ main {
 	font-size: medium;
 }
 
-header, nav {
+nav, header, footer {
 	font-family: 'Merriweather Sans', sans-serif;
 	font-size: medium;
 }
@@ -49,4 +49,12 @@ nav a {
 	color: inherit;
 
 	padding: 8px;
+}
+
+.post-date {
+	text-align: center;
+}
+
+.post-footer {
+	text-align: center;
 }
