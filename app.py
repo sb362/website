@@ -43,7 +43,7 @@ def post(post_name):
 
 @app.route('/pygments.css')
 def pygments_css():
-    return pygments_style_defs('tango'), 200, {'Content-Type': 'text/css'}
+    return pygments_style_defs("colorful"), 200, {"Content-Type": "text/css"}
 
 if __name__ == "__main__":
     if len(sys.argv) >= 2 and sys.argv[1] == "build":
