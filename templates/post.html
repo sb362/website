@@ -4,25 +4,70 @@
   {{ post.title }}
 {% endblock %}
 
+{% block head %}
+  <link href="/static/styles/post.css" rel="stylesheet">
+{% endblock %}
+
 {% block main %}
-  <div class="post">
-    <div class="post-header">
-      <h1>{{ post.title }}</h1>
+  <article id="post">
+    <header>
+      <h1><span id="title">{{ post.title }}</span></h1>
       {% if post.subtitle %}
-      <h3 style="font-weight: normal;">{{ post.subtitle }}</h3>
+      <h3><span id="subtitle">{{ post.subtitle }}</span></h3>
       {% endif %}
       <hr>
-    </div>
+    </header>
 
-    <article class="post">
-      <section class="post-content">{{ post.html | safe }}</section>
-    </article>
+    <section id="">{{ post.html | safe }}</section>
 
-    <div class="post-footer">
+    <footer>
       {% if post.date %}
       <hr>
-      {{ post.date.strftime("%B %d, %Y") }}
+
+      <div id="date">{{ post.date.strftime("%B %d, %Y") }}</div>
       {% endif %}
-    </div>
-  </div>
+
+      {% if series_posts %}
+        <hr>
+
+        <p><i>This post is part of a series.</i></p>
+
+        <ul id="series-posts">
+        {% for series_post in series_posts %}
+          <li>
+            <a class="hidden-link" href="/{{ series_post.path }}">
+              {% if series_post == post  %}
+                <span class="post-reference"><b>{{ series_post.title }}</b></span>
+              {% else %}
+                <span class="post-reference">{{ series_post.title }}</span>
+              {% endif %}
+            </a>
+          </li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+
+      {% if prev_post or next_post %}
+      <div id="other-post-info">
+        <hr>
+
+        {% if prev_post %}
+        <div id="prev-post">
+          <a class="hidden-link" href="/{{ prev_post.path }}">
+            <span class="post-reference">&#9668; {{ prev_post.title }}</span>
+          </a>
+        </div>
+        {% endif %}
+
+        {% if next_post %}
+        <div id="next-post">
+          <a class="hidden-link" href="/{{ next_post.path }}">
+            <span class="post-reference">{{ next_post.title }} &#9658;</span>
+          </a>
+        </div>
+        {% endif %}
+      </div>
+      {% endif %}
+    </footer>
+  </article>
 {% endblock %}

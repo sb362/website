@@ -1,7 +1,7 @@
 {% extends "common.html" %}
 
-{% block head %}
-  <title>Posts</title>
+{% block title %}
+  Posts
 {% endblock %}
 
 {% block main %}
@@ -12,13 +12,13 @@
 
       {% for post in posts %}
         {% if not loop.previtem or loop.previtem.date.strftime("%Y") != post.date.strftime("%Y") %}
-          {% if loop.previtem %} </ul> {% endif %}
+          {% if loop.previtem %}</ul>{% endif %}
 
-      <h1>{{ post.date.strftime("%Y") }}</h1>
+      <h3>{{ post.date.strftime("%Y") }}</h3>
       <ul>
         {% endif %}
 
-      <li><a class="hidden-link" href="{{ post.path }}">{{ post.title }}</a></li>
+      <li><a class="hidden-link" href="/{{ post.path }}">{{ post.title }}</a></li>
       {% endfor %}
 
       {% if posts %}

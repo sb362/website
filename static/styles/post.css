@@ -1,0 +1,20 @@
+#post header #subtitle {
+	font-weight: normal;
+}
+
+#post footer #date {
+	text-align: center;
+}
+
+#post footer #prev-post {
+	float: left;
+}
+
+#post footer #next-post {
+	float: right;
+}
+
+#post footer .post-reference
+{
+	font-family: 'Merriweather Sans', sans-serif;
+}

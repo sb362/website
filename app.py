@@ -25,21 +25,38 @@ flat_pages = FlatPages(app)
 freezer = Freezer(app)
 
 @app.route("/")
-@app.route("/index")
 def index():
     return render_template("index.html")
 
-@app.route("/posts")
+@app.route("/posts/")
 def posts():
-    all_posts = (page for page in flat_pages if set(("date", "title")) <= page.meta.keys())
-    sorted_posts = sorted(all_posts, key = lambda post: post.meta["date"], reverse=True)
+    unsorted_posts = (page for page in flat_pages if set(("date", "title")) <= page.meta.keys())
+    sorted_posts = sorted(unsorted_posts, key=lambda post: post.meta["date"], reverse=True)
     
     return render_template("posts.html", posts=sorted_posts)
 
-@app.route("/posts/<post_name>")
-def post(post_name):
-    post = flat_pages.get_or_404(f"posts/{post_name}")
-    return render_template("post.html", post=post)
+@app.route("/posts/<path:post_path>")
+def post(post_path):
+    post = flat_pages.get_or_404(f"posts/{post_path}")
+    
+    unsorted_posts = (page for page in flat_pages if set(("date", "title")) <= page.meta.keys())
+    sorted_posts = sorted(unsorted_posts, key=lambda post: post.meta["date"])
+    
+    path_parts = post_path.split("/")
+    series_path = len(path_parts) > 1 and path_parts[0]
+    is_in_series = bool(series_path)
+
+    if is_in_series:
+        series_posts = [post for post in sorted_posts if post.path.startswith("posts/" + series_path)]
+    else:
+        series_posts = []
+    
+    i = sorted_posts.index(post)
+    prev_post = i > 0 and sorted_posts[i - 1]
+    next_post = i < (len(sorted_posts) - 1) and sorted_posts[i + 1]
+
+    return render_template("post.html", post=post, prev_post=prev_post, next_post=next_post,
+                           series_posts=series_posts)
 
 @app.route('/pygments.css')
 def pygments_css():

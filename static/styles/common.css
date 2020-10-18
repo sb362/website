@@ -1,4 +1,4 @@
-main, header, footer, nav {
+main, nav {
 	display: block;
 	margin: 0 auto;
 	max-width: 800px;
@@ -10,9 +10,11 @@ main {
 	font-size: medium;
 }
 
-nav, header, footer {
+nav {
 	font-family: 'Merriweather Sans', sans-serif;
 	font-size: medium;
+
+	text-align: center;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -21,16 +23,6 @@ h1, h2, h3, h4, h5, h6 {
 
 pre, code {
 	font-family: "Fira Code", monospace;
-}
-
-main img {
-	max-width: 100%;
-	max-height: 100%;
-}
-
-.post-list {
-	border-collapse: collapse;
-	box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
 a.hidden-link {
@@ -55,10 +47,7 @@ nav a {
 	padding: 8px;
 }
 
-.post-date {
-	text-align: center;
-}
-
-.post-footer {
-	text-align: center;
+.post-list {
+	border-collapse: collapse;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
