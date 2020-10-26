@@ -10,7 +10,7 @@
       <h4>Nothing here, yet.</h4>
       {% endif %}
 
-      {% for post in posts %}
+      {% for post in posts if not post.unlisted %}
         {% if not loop.previtem or loop.previtem.date.strftime("%Y") != post.date.strftime("%Y") %}
           {% if loop.previtem %}</ul>{% endif %}
 
