@@ -26,7 +26,8 @@ freezer = Freezer(app)
 
 @app.route("/")
 def index():
-    return render_template("index.html")
+    # return render_template("index.html")
+    return posts()
 
 @app.route("/posts/")
 def posts():
@@ -59,7 +60,7 @@ def post(post_path):
                            series_posts=series_posts)
 
 @app.route('/pygments.css')
-def pygments_css():
+def pygments_theme():
     return pygments_style_defs("colorful"), 200, {"Content-Type": "text/css"}
 
 if __name__ == "__main__":
