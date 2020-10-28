@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block head %}
-  <link href="/static/styles/post.css" rel="stylesheet">
+  <link href="{{ url_for('static', filename='styles/post.css') }}" rel="stylesheet">
 {% endblock %}
 
 {% block main %}
@@ -13,7 +13,7 @@
     <header>
       <h1><span id="title">{{ post.title }}</span></h1>
       {% if post.subtitle %}
-      <h3><span id="subtitle">{{ post.subtitle }}</span></h3>
+      <h2><span id="subtitle">{{ post.subtitle }}</span></h2>
       {% endif %}
       <hr>
     </header>

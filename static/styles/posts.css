@@ -1,0 +1,47 @@
+.post-list .post {
+	display: flex;
+	flex-direction: row;
+
+	height: 150px;
+	width: 720px;
+
+	padding: 10px 10px 10px 10px;
+
+	border: 1px solid;
+}
+
+.post-list .post .description {
+	display: block;
+
+	font-family: 'Merriweather Sans', sans-serif;
+
+	padding: 0px 10px 10px 10px;
+}
+
+.post-list .post .title {
+	font-size: x-large;
+	font-weight: bold;
+}
+
+.post-list .post .subtitle {
+	font-weight: lighter;
+}
+
+.post-list .post .thumbnail {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	
+	height: 150px;
+	width: 150px;
+}
+
+.post-list .post .thumbnail img {
+	max-height: 150px;
+	max-width: 150px;
+
+	object-fit: cover;
+
+	position: relative;
+}

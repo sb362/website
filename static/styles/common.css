@@ -7,12 +7,10 @@ body {
 
 main {
 	font-family: 'Merriweather', serif;
-	font-size: medium;
 }
 
 nav {
 	font-family: 'Merriweather Sans', sans-serif;
-	font-size: medium;
 
 	text-align: center;
 }
@@ -45,9 +43,4 @@ nav a {
 	color: inherit;
 
 	padding: 8px;
-}
-
-.post-list {
-	border-collapse: collapse;
-	box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }

@@ -1,5 +1,13 @@
+#post header #title {
+	font-size: larger;
+
+	font-weight: bolder;
+}
+
 #post header #subtitle {
-	font-weight: normal;
+	font-size: smaller;
+
+	font-weight: lighter;
 }
 
 #post footer #date {
