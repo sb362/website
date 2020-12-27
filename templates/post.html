@@ -16,41 +16,55 @@
       <h2><span id="subtitle">{{ post.subtitle }}</span></h2>
       {% endif %}
       <hr>
+
+      {% if post.date %}
+      <div id="date">{{ post.date.strftime("%B %d, %Y") }}</div>
+      <hr>
+      {% endif %}
     </header>
 
-    <section id="">{{ post.html | safe }}</section>
+    <section id="content">{{ post.html | safe }}</section>
 
     <footer>
-      {% if post.date %}
       <hr>
 
-      <div id="date">{{ post.date.strftime("%B %d, %Y") }}</div>
-      {% endif %}
+      <div id="view-all"><a class="hidden-link" href="/posts">View recent posts</a></div>
 
-      {% if series_posts %}
-        <hr>
+      <!--
+      <div id="other-posts">
+        <p>
+        {% if is_in_series %}
+          Other posts in this series
+        {% else %}
+          Most recent posts
+        {% endif %}
+        </p>
 
-        <p><i>This post is part of a series.</i></p>
-
-        <ul id="series-posts">
-        {% for series_post in series_posts %}
+        <ul id="other-posts">
+        {% for other_post in other_posts %}
           <li>
-            <a class="hidden-link" href="/{{ series_post.path }}">
-              {% if series_post == post  %}
-                <span class="post-reference"><b>{{ series_post.title }}</b></span>
+            <a class="hidden-link" href="/{{ other_post.path }}">
+              {% if other_post == post %}
+                <span class="post-reference"><b>{{ other_post.title }}</b></span>
               {% else %}
-                <span class="post-reference">{{ series_post.title }}</span>
+                <span class="post-reference">{{ other_post.title }}</span>
               {% endif %}
             </a>
           </li>
         {% endfor %}
+
+          <li>
+            <a class="hidden-link" href="/posts">
+              <span class="post-reference">See all posts</span>
+            </a>
+          </li>
         </ul>
-      {% endif %}
+      </div>
 
       {% if prev_post or next_post %}
-      <div id="other-post-info">
-        <hr>
+      <hr>
 
+      <div id="other-post-info">
         {% if prev_post %}
         <div id="prev-post">
           <a class="hidden-link" href="/{{ prev_post.path }}">
@@ -68,6 +82,9 @@
         {% endif %}
       </div>
       {% endif %}
+      -->
+
+      <hr>
     </footer>
   </article>
 {% endblock %}

@@ -6,8 +6,11 @@
 	width: 720px;
 
 	padding: 10px 10px 10px 10px;
+}
 
-	border: 1px solid;
+.post-list .post:hover {
+	box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.5);
+	transition: box-shadow 0.15s linear;
 }
 
 .post-list .post .description {

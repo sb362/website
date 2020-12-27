@@ -1,5 +1,9 @@
+#post #content a {
+	text-decoration: none;
+} 
+
 #post header #title {
-	font-size: larger;
+	font-size: 1.5em;
 
 	font-weight: bolder;
 }
@@ -10,8 +14,12 @@
 	font-weight: lighter;
 }
 
-#post footer #date {
+#post header #date {
 	text-align: center;
+}
+
+#post footer #other-posts {
+	font-family: 'Merriweather Sans', sans-serif;
 }
 
 #post footer #prev-post {
@@ -22,7 +30,17 @@
 	float: right;
 }
 
-#post footer .post-reference
-{
+#post footer .post-reference {
 	font-family: 'Merriweather Sans', sans-serif;
+}
+
+#post footer #view-all {
+	text-align: center;
+}
+
+#post blockquote {
+	border-left: 0.25rem solid #e5e5e5;
+	color: #979797;
+	margin: .8rem 0;
+	padding: 0rem 1rem 0rem 1rem;
 }

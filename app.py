@@ -48,16 +48,16 @@ def post(post_path):
     is_in_series = bool(series_path)
 
     if is_in_series:
-        series_posts = [post for post in sorted_posts if post.path.startswith("posts/" + series_path)]
+        other_posts = [post for post in sorted_posts if post.path.startswith("posts/" + series_path)]
     else:
-        series_posts = []
-    
+        other_posts = sorted_posts[:3]
+
     i = sorted_posts.index(post)
     prev_post = i > 0 and sorted_posts[i - 1]
     next_post = i < (len(sorted_posts) - 1) and sorted_posts[i + 1]
 
     return render_template("post.html", post=post, prev_post=prev_post, next_post=next_post,
-                           series_posts=series_posts)
+                           other_posts=other_posts, is_in_series=is_in_series)
 
 @app.route('/pygments.css')
 def pygments_theme():
