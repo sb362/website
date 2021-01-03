@@ -23,8 +23,11 @@ pre, code {
 	font-family: "Fira Code", monospace;
 }
 
-a.hidden-link {
+a {
 	text-decoration: none;
+}
+
+a.hidden-link {
 	color: inherit;
 }
 
@@ -43,4 +46,8 @@ nav a {
 	color: inherit;
 
 	padding: 8px;
+}
+
+.centred-text {
+	text-align: center;
 }

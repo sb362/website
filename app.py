@@ -24,17 +24,17 @@ app.config.from_object(__name__)
 flat_pages = FlatPages(app)
 freezer = Freezer(app)
 
+def sorted_posts():
+    unsorted_posts = (page for page in flat_pages if set(("date", "title")) <= page.meta.keys())
+    return sorted(unsorted_posts, key=lambda post: post.meta["date"], reverse=True)
+
 @app.route("/")
 def index():
-    # return render_template("index.html")
-    return posts()
+    return render_template("index.html", posts=sorted_posts())
 
-@app.route("/posts/")
+@app.route("/posts")
 def posts():
-    unsorted_posts = (page for page in flat_pages if set(("date", "title")) <= page.meta.keys())
-    sorted_posts = sorted(unsorted_posts, key=lambda post: post.meta["date"], reverse=True)
-    
-    return render_template("posts.html", posts=sorted_posts)
+    return render_template("posts.html", posts=sorted_posts())
 
 @app.route("/posts/<path:post_path>")
 def post(post_path):

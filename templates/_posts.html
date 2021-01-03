@@ -1,0 +1,24 @@
+
+<div class="post-list">
+  {% for post in posts if not post.unlisted %}
+  <a class="hidden-link" href="/{{ post.path }}">
+    <div class="post">
+      <div id="image">
+    {% if post.image %}
+        <img src="{{ url_for('static', filename=post.image) }}">
+    {% endif %}
+      </div>
+
+      <div id="description">
+        <h3><span id="title">{{ post.title }}</span></h3>
+
+        {% if post.subtitle %}
+          <h4><span id="subtitle">{{ post.subtitle }}</span></h4>
+        {% endif %}
+
+        <span id="date">{{ post.date.strftime("%B %d, %Y") }}</span>
+      </div>
+    </div>
+  </a>
+  {% endfor %}
+</div>

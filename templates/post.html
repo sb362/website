@@ -11,16 +11,26 @@
 {% block main %}
   <article id="post">
     <header>
-      <h1><span id="title">{{ post.title }}</span></h1>
-      {% if post.subtitle %}
-      <h2><span id="subtitle">{{ post.subtitle }}</span></h2>
-      {% endif %}
+      <h2><span id="title">{{ post.title }}</span></h2>
+      <h3><span id="subtitle">{{ post.subtitle }}</span></h3>
       <hr>
 
+      <div id="separator">
       {% if post.date %}
-      <div id="date">{{ post.date.strftime("%B %d, %Y") }}</div>
-      <hr>
+        <div id="date">{{ post.date.strftime("%B %d, %Y") }}</div>
       {% endif %}
+
+        <div id="view-all"><a class="hidden-link" href="/posts">View recent posts</a></div>
+      </div>
+
+      <br>
+      <hr>
+
+      <div id="image">
+      {% if post.image %}
+        <img src="{{ url_for('static', filename=post.image) }}">
+      {% endif %}
+      </div>
     </header>
 
     <section id="content">{{ post.html | safe }}</section>
@@ -28,9 +38,6 @@
     <footer>
       <hr>
 
-      <div id="view-all"><a class="hidden-link" href="/posts">View recent posts</a></div>
-
-      <!--
       <div id="other-posts">
         <p>
         {% if is_in_series %}
@@ -82,9 +89,7 @@
         {% endif %}
       </div>
       {% endif %}
-      -->
 
-      <hr>
     </footer>
   </article>
 {% endblock %}

@@ -13,7 +13,7 @@
 	transition: box-shadow 0.15s linear;
 }
 
-.post-list .post .description {
+.post-list .post #description {
 	display: block;
 
 	font-family: 'Merriweather Sans', sans-serif;
@@ -21,16 +21,16 @@
 	padding: 0px 10px 10px 10px;
 }
 
-.post-list .post .title {
+.post-list .post #title {
 	font-size: x-large;
 	font-weight: bold;
 }
 
-.post-list .post .subtitle {
+.post-list .post #subtitle {
 	font-weight: lighter;
 }
 
-.post-list .post .thumbnail {
+.post-list .post #image {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -40,7 +40,7 @@
 	width: 150px;
 }
 
-.post-list .post .thumbnail img {
+.post-list .post #image img {
 	max-height: 150px;
 	max-width: 150px;
 
