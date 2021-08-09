@@ -38,6 +38,10 @@ def index():
 def posts():
     return render_template("posts.html", posts=sorted_posts())
 
+@app.route("/about")
+def about():
+    return render_template("about.html")
+
 @app.route("/posts/<path:post_path>")
 def post(post_path):
     post = flat_pages.get_or_404(f"posts/{post_path}")
